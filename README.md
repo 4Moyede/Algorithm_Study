@@ -1,1 +1,0 @@
-# Algoright_Study
