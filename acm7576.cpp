@@ -1,4 +1,9 @@
-
+/**
+ * 
+ * 백준 7576번, 토마토
+ * 190504
+ * 
+*/
 #include <iostream>
 #include <queue>
 #include <utility>
