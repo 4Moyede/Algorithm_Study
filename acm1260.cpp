@@ -1,7 +1,7 @@
 /**
  * 
- * 1260번, DFS와 BFS
- * 20190504
+ * 백준 1260번, DFS와 BFS
+ * 190504
  * 
 */
 #include <iostream>
