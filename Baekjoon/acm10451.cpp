@@ -1,3 +1,10 @@
+/**
+ * 
+ * 백준 10451번, 순열 사이클
+ * 190514
+ * https://www.acmicpc.net/problem/10451
+ * 
+*/
 #include <iostream>
 #include <vector>
 #include <queue>
