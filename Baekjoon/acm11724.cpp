@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <utility>
+#include <queue>
 using namespace std;
 
 // 정점의 개수 N과 간선의 개수 M이 주어진다. (1 ≤ N ≤ 1,000, 0 ≤ M ≤ N×(N-1)/2) 
@@ -17,6 +18,7 @@ vector<vector<int> > dot;
 vector<bool> visited;
 
 void DFS(int idx);
+void BFS(int idx);
 
 // 방향 없는 그래프가 주어졌을 때, 연결 요소 (Connected Component)의 개수를 구하는 프로그램을 작성하시오.
 int main(){
@@ -35,7 +37,7 @@ int main(){
     int ans = 0;
     for(int n = 1; n <= N; n++){
         if(!visited[n]){
-            DFS(n);
+            BFS(n);
             ans++;
         }
     }
@@ -52,4 +54,24 @@ void DFS(int idx){
     
     for(int i = 0; i < dot[idx].size(); i++)
         DFS(dot[idx][i]);
+}
+
+void BFS(int idx){
+
+    queue<int> q;
+    q.push(idx);
+    visited[idx] = true;
+
+    while(!q.empty()){
+        int cur = q.front();
+        q.pop();
+
+        for(int i = 0; i < dot[cur].size(); i++){
+            int next = dot[cur][i];
+            if(visited[next]) continue;
+            visited[next] = true;
+            q.push(next);
+        }
+    }
+
 }
