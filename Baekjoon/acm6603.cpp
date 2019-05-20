@@ -45,11 +45,25 @@ int main(){
 
     } while(K);
 
+/**
+ *  
+ * K가 0일 때까지 입력.
+ * 
+ *  while(cin >> K && K){
+ *      for(int k = 0; k < K; k++){
+ *          int input_;
+ *          cin >> input_;
+ *          S.push_back(input_);
+ *      }
+ *  }
+ * 
+*/
+
     return 0;
 }
 
 void DFS(int idx, int cnt){
-    
+
     if(cnt == 6){
         for(int i = 0; i < S.size(); ++i){
             if(check[i])
