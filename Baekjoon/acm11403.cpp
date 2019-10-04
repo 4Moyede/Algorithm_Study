@@ -15,16 +15,13 @@ using namespace std;
 int N;
 vector<vector<int> > road;
 vector<vector<int> > check;
-vector<int> visited;
 
 // 정점 i에서 j로 가는 경로가 있으면 i번째 줄의 j번째 숫자를 1로, 없으면 0으로 출력해야 한다.
 vector<vector<int> > ans;
-bool found = false;
-int start_idx, end_idx;
+int start_idx;
 
 void solve();
 void DFS(int idx);
-void init_check();
 
 // 모든 정점 (i, j)에 대해서, i에서 j로 가는 경로가 있는지 없는지 구하는 프로그램을 작성하시오.
 int main(){
@@ -34,7 +31,6 @@ int main(){
     road.assign(N, vector<int>());
     check.assign(N, vector<int>());
     ans.assign(N, vector<int>(N, 0));
-    visited.assign(N, 0);
 
     // 둘째 줄부터 N개 줄에는 그래프의 인접 행렬이 주어진다. 
     for(int y = 0; y < N; y++){
